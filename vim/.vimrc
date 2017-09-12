@@ -54,8 +54,10 @@ set list
 
 let mapleader = ","
 
-let base16colorspace=256
-colorscheme base16-dracula
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set splitbelow
 set splitright
@@ -118,3 +120,6 @@ augroup vimrcEx
     \ endif
 
 augroup END
+
+set title
+set titlestring="vim: %t"
