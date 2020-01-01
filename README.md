@@ -1,12 +1,10 @@
 # zsh
 
-```
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-echo 'export THEME="base16_monokai"' >> ~/.zshenv
-```
-put `PATH`, etc. in `~/.zshenv` as well
+no special setup needed
 
 # vim
+
+historical, i switched to doom-emacs
 
 ```
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein.sh
