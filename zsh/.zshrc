@@ -10,7 +10,7 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
 bindkey -v
 setopt appendhistory autocd nomatch notify inc_append_history hist_expire_dups_first
