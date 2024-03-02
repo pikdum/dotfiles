@@ -109,7 +109,24 @@ gaps outer 5
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    set $screenlock 'swaylock -f -c 000000'
+    # System mode menu
+    # https://github.com/openSUSE/openSUSEway/blob/c0593e6a483e80e884e79acc23f2ad5ebf32e302/.config/sway/config.d/50-openSUSE.conf
+    set $mode_system "What to do? (l) lock, (e) logout, (r) reboot, (s) suspend, (Shift+s) shutdown"
+    mode $mode_system {
+        bindsym l exec $screenlock; mode "default"
+        bindsym e exec swaymsg exit; mode "default"
+        bindsym r exec systemctl reboot; mode "default"
+        bindsym s exec systemctl suspend; mode "default"
+        bindsym Shift+s exec systemctl poweroff; mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+Shift+e mode $mode_system
 #
 # Moving around:
 #
