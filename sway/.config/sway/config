@@ -266,3 +266,5 @@ include /etc/sway/config.d/*
 
 # startup
 exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 1.0
+
+exec /usr/lib/polkit-kde-authentication-agent-1
