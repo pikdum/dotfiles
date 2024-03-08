@@ -247,7 +247,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 
-    status_command while ~/.config/sway/status.sh; do sleep 60; done
+    status_command while ~/.config/sway/status.sh; do sleep 30; done
 
     colors {
         background #282A36
