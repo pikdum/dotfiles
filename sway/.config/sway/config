@@ -39,6 +39,9 @@ client.background       #282A36
 
 font pango:SourceCodePro Medium 11
 
+# floating
+for_window [title="Picture-in-Picture"] floating enable
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
