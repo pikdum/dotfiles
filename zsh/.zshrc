@@ -15,7 +15,8 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
 export EDITOR='emacs -nw'
-export PATH="/opt/rocm/bin:$HOME/.config/emacs/bin:$HOME/.local/bin:$HOME/bin:$PATH"
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="/opt/rocm/bin:$HOME/.config/emacs/bin:$HOME/.local/bin:$HOME/bin:$FLYCTL_INSTALL/bin:$PATH"
 
 bindkey -v
 setopt appendhistory autocd nomatch notify inc_append_history hist_expire_dups_first
