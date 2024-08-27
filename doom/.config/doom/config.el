@@ -54,6 +54,16 @@
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
+(after! copilot
+  (setq copilot-indent-offset-warning-disable t))
+
+(after! lsp-mode
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("~/code/lexical/_build/dev/package/lexical/bin/start_lexical.sh"))
+                    :multi-root t
+                    :activation-fn (lsp-activate-on "elixir")
+                    :server-id 'lexical)))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
